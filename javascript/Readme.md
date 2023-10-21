@@ -1,4 +1,4 @@
-# Web Development Guidelines
+# Transitioning from HTML to Plain JavaScript
 
 ## 1. User's Web Page Visit
 
