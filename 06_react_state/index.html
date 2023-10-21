@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      function Header({ title, likes, handleClick }) {
+        return (
+          <>
+            <h1>{title ? title : "I 💙 React"}</h1>
+            <br />
+            <button onClick={handleClick}>Likes: {likes}</button>
+          </>
+          )
+      }
+
+      function HomePage() {
+        const [likes, setLikes] = React.useState(0)
+
+        function handleClick() {
+          setLikes(prev => prev + 1);
+        }
+
+
+        return (
+          <Header title="Develop. Preview. Ship. 🚀" handleClick={handleClick} likes={likes} />
+        );
+      }
+
+      ReactDOM.render(<HomePage />, app);
+    </script>
+  </body>
+</html>
